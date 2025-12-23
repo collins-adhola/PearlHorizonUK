@@ -1,0 +1,67 @@
+// Layout Utilities
+// ----------------------------------------------------------------------------
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+// Typography Utilities
+// ----------------------------------------------------------------------------
+
+.pageTitle {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.pageSub {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(15, 23, 42, 0.65);
+}
+
+.muted {
+  color: var(--ion-color-medium);
+}
+
+// CTA Utilities
+// ----------------------------------------------------------------------------
+
+.ctaRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .pageTitle {
+    font-size: 28px;
+  }
+
+  .pageSub {
+    font-size: 16px;
+  }
+}
+

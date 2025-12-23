@@ -1,0 +1,108 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="page-header section">
+      <h1 class="pageTitle">Request Advisory Intake</h1>
+      <p class="pageSub">Answer a few questions and we'll confirm whether an advisory engagement is appropriate, along with next steps.</p>
+    </div>
+
+    <section class="section">
+      <form [formGroup]="intakeForm" (ngSubmit)="onSubmit()" class="intake-form">
+      <ion-item class="form-item">
+        <ion-label position="stacked">Full name <span class="required">*</span></ion-label>
+        <ion-input formControlName="fullName" type="text" placeholder="Enter your full name"></ion-input>
+      </ion-item>
+      <div class="error-message" *ngIf="intakeForm.get('fullName')?.invalid && intakeForm.get('fullName')?.touched">
+        Full name is required
+      </div>
+
+      <ion-item class="form-item">
+        <ion-label position="stacked">Email <span class="required">*</span></ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Enter your email"></ion-input>
+      </ion-item>
+      <div class="error-message" *ngIf="intakeForm.get('email')?.invalid && intakeForm.get('email')?.touched">
+        <span *ngIf="intakeForm.get('email')?.errors?.['required']">Email is required</span>
+        <span *ngIf="intakeForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+      </div>
+
+      <ion-item class="form-item">
+        <ion-label position="stacked">Phone/WhatsApp</ion-label>
+        <ion-input formControlName="phone" type="tel" placeholder="Enter your phone number"></ion-input>
+      </ion-item>
+
+      <ion-item class="form-item">
+        <ion-label position="stacked">Country/timezone</ion-label>
+        <ion-input formControlName="country" type="text" placeholder="Enter your country or timezone"></ion-input>
+      </ion-item>
+
+      <ion-item class="form-item">
+        <ion-label position="stacked">Pathway selection <span class="required">*</span></ion-label>
+        <ion-select formControlName="pathway" placeholder="Select a pathway">
+          <ion-select-option *ngFor="let option of pathwayOptions" [value]="option.value">
+            {{ option.label }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="error-message" *ngIf="intakeForm.get('pathway')?.invalid && intakeForm.get('pathway')?.touched">
+        Pathway selection is required
+      </div>
+
+      <ion-item class="form-item">
+        <ion-label position="stacked">What are you trying to achieve? <span class="required">*</span></ion-label>
+        <ion-textarea formControlName="goal" rows="4" placeholder="Describe your goals"></ion-textarea>
+      </ion-item>
+      <div class="error-message" *ngIf="intakeForm.get('goal')?.invalid && intakeForm.get('goal')?.touched">
+        Goal description is required
+      </div>
+
+      <ion-item class="form-item">
+        <ion-label position="stacked">Timeline <span class="required">*</span></ion-label>
+        <ion-select formControlName="timeline" placeholder="Select timeline">
+          <ion-select-option *ngFor="let option of timelineOptions" [value]="option.value">
+            {{ option.label }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="error-message" *ngIf="intakeForm.get('timeline')?.invalid && intakeForm.get('timeline')?.touched">
+        Timeline is required
+      </div>
+
+      <ion-item class="form-item">
+        <ion-label position="stacked">Budget range <span class="required">*</span></ion-label>
+        <ion-select formControlName="budget" placeholder="Select budget range">
+          <ion-select-option *ngFor="let option of budgetOptions" [value]="option.value">
+            {{ option.label }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="error-message" *ngIf="intakeForm.get('budget')?.invalid && intakeForm.get('budget')?.touched">
+        Budget range is required
+      </div>
+
+      <ion-item class="form-item checkbox-item">
+        <ion-checkbox formControlName="canShareDocuments"></ion-checkbox>
+        <ion-label>I can share documents after initial review</ion-label>
+      </ion-item>
+
+      <ion-item class="form-item checkbox-item">
+        <ion-checkbox formControlName="consent"></ion-checkbox>
+        <ion-label>I agree to the processing of my information for the purpose of this enquiry. <span class="required">*</span></ion-label>
+      </ion-item>
+      <div class="error-message" *ngIf="intakeForm.get('consent')?.invalid && intakeForm.get('consent')?.touched">
+        Consent is required
+      </div>
+
+      <div class="submit-section">
+        <ion-button 
+          type="submit" 
+          [disabled]="!intakeForm.valid" 
+          fill="solid" 
+          color="primary" 
+          size="large"
+          expand="block">
+          Submit Intake Request
+        </ion-button>
+      </div>
+      </form>
+    </section>
+  </div>
+</ion-content>

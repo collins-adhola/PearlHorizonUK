@@ -1,0 +1,70 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="page-header section">
+      <h1 class="pageTitle">Uganda Entry Advisory</h1>
+      <p class="pageSub">For businesses, organisations, and individuals seeking clarity before committing time, capital, or people.</p>
+    </div>
+
+    <section class="section">
+      <ion-card class="card">
+        <ion-card-header>
+          <ion-card-title>What's included:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <p>Entry pathway overview (commercial, organisational, mission-led)</p>
+            </ion-item>
+            <ion-item>
+              <p>High-level regulatory landscape awareness (non-legal)</p>
+            </ion-item>
+            <ion-item>
+              <p>Risk patterns and common failure points</p>
+            </ion-item>
+            <ion-item>
+              <p>Verification support where relevant</p>
+            </ion-item>
+            <ion-item>
+              <p>Decision readiness: proceed / pause / re-scope</p>
+            </ion-item>
+            <ion-item>
+              <p>Optional introductions (where appropriate)</p>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section class="section">
+      <ion-card class="card">
+        <ion-card-header>
+          <ion-card-title>How engagements work:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <p>Fixed scope + fee agreed upfront</p>
+            </ion-item>
+            <ion-item>
+              <p>Written brief delivered</p>
+            </ion-item>
+            <ion-item>
+              <p>1–2 advisory calls (as scoped)</p>
+            </ion-item>
+            <ion-item>
+              <p>Close-out + next steps</p>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section class="section">
+      <div class="ctaRow">
+        <ion-button routerLink="/intake" [queryParams]="{ pathway: 'invest-work' }" routerDirection="root" fill="solid" color="primary" size="large">
+          Request Advisory Intake
+        </ion-button>
+      </div>
+    </section>
+  </div>
+</ion-content>

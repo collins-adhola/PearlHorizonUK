@@ -1,0 +1,38 @@
+.page-header {
+  text-align: center;
+}
+
+ion-card {
+  margin: 0;
+
+  ion-card-header {
+    padding-bottom: 8px;
+  }
+
+  ion-card-title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  ion-card-content {
+    padding-top: 0;
+  }
+
+  ion-list {
+    padding: 0;
+  }
+
+  ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    --min-height: auto;
+    padding: 12px 0;
+
+    p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ion-color-dark);
+    }
+  }
+}

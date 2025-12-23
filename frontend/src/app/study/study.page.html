@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="page-header section">
+      <h1 class="pageTitle">Education Pathway Advisory</h1>
+      <p class="pageSub">Structured support for informed education decisions in Uganda.</p>
+    </div>
+
+    <section class="section">
+      <ion-card class="card">
+        <ion-card-header>
+          <ion-card-title>What we support:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <p>Shortlists and comparisons</p>
+            </ion-item>
+            <ion-item>
+              <p>Governance and safeguarding considerations</p>
+            </ion-item>
+            <ion-item>
+              <p>Admissions process guidance</p>
+            </ion-item>
+            <ion-item>
+              <p>Introductions to schools (where appropriate)</p>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section class="section">
+      <ion-card class="card boxed-card">
+        <ion-card-header>
+          <ion-card-title>Uganda Student Visa — Administrative Support</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="muted">We provide document checklists, preparation support, and application coordination for Uganda student visas. Applicants submit their applications, and decisions are made solely by the relevant authorities. No guarantees.</p>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section class="section">
+      <div class="ctaRow">
+        <ion-button routerLink="/intake" [queryParams]="{ pathway: 'study' }" routerDirection="root" fill="solid" color="primary" size="large">
+          Request Education Advisory
+        </ion-button>
+      </div>
+    </section>
+  </div>
+</ion-content>

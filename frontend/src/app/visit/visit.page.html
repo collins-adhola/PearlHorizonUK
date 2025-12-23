@@ -1,0 +1,52 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="page-header section">
+      <h1 class="pageTitle">Curated Visits & Group Pathways</h1>
+      <p class="pageSub">A trusted first step for individuals and groups exploring Uganda.</p>
+    </div>
+
+    <section class="section">
+      <ion-card class="card">
+        <ion-card-header>
+          <ion-card-title>What we offer:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <p>Referrals to vetted operators</p>
+            </ion-item>
+            <ion-item>
+              <p>Group visit coordination (fixed scope)</p>
+            </ion-item>
+            <ion-item>
+              <p>Pre-travel briefing pack</p>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section class="section">
+      <ion-card class="card boxed-card">
+        <ion-card-header>
+          <ion-card-title>Uganda Tourist Visa — Administrative Support</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="muted">We provide document checklists, preparation support, and application coordination for Uganda tourist visas. Applicants submit their applications, and decisions are made solely by the relevant authorities.</p>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section class="section">
+      <p class="muted notice-text">We do not operate tours. Partner services may be commission-based.</p>
+    </section>
+
+    <section class="section">
+      <div class="ctaRow">
+        <ion-button routerLink="/intake" [queryParams]="{ pathway: 'visit' }" routerDirection="root" fill="solid" color="primary" size="large">
+          Request Trip Intake
+        </ion-button>
+      </div>
+    </section>
+  </div>
+</ion-content>

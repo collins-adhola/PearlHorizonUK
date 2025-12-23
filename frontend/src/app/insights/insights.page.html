@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="page-header section">
+      <h1 class="pageTitle">Insights</h1>
+      <p class="pageSub">Decision-led guidance for engaging with Uganda — before commitments are made.</p>
+    </div>
+
+    <section class="section">
+      <div class="insights-grid">
+        <ion-card *ngFor="let insight of insights" class="card">
+          <ion-card-header>
+            <ion-badge [color]="getTagColor(insight.tag)">{{ insight.tag }}</ion-badge>
+            <ion-card-title>{{ insight.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ insight.description }}</p>
+            <ion-button disabled fill="outline" color="medium">Coming soon</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </section>
+  </div>
+</ion-content>
+

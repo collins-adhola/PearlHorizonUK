@@ -1,0 +1,98 @@
+ion-header {
+  ion-toolbar {
+    --background: var(--color-primary);
+    --color: var(--color-text-inverse);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--app-shadow-sm);
+    border-bottom: var(--app-card-border);
+  }
+
+  ion-title {
+    flex: 0 0 auto;
+    text-align: left;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-tight);
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: flex-end;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+
+    ion-button {
+      flex: 0 0 auto;
+      margin: 0;
+      --border-radius: var(--app-radius-sm);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      --padding-start: var(--space-3);
+      --padding-end: var(--space-3);
+      --padding-top: var(--space-2);
+      --padding-bottom: var(--space-2);
+    }
+
+    .cta-button {
+      flex-shrink: 0;
+      --box-shadow: var(--app-shadow-sm);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  ion-header {
+    ion-toolbar {
+      flex-wrap: wrap;
+      min-height: auto;
+    }
+
+    ion-title {
+      width: 100%;
+      text-align: center;
+      margin-bottom: var(--space-2);
+      font-size: var(--font-size-base);
+      padding: var(--space-2) var(--space-4);
+    }
+
+    .nav-buttons {
+      width: 100%;
+      justify-content: center;
+      gap: var(--space-1);
+      padding: var(--space-2) var(--space-3);
+
+      ion-button {
+        flex: 1 1 auto;
+        min-width: 0;
+        font-size: var(--font-size-sm);
+        --padding-start: var(--space-2);
+        --padding-end: var(--space-2);
+      }
+
+      .cta-button {
+        flex: 1 1 100%;
+        margin-top: var(--space-2);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  ion-header {
+    .nav-buttons {
+      ion-button:not(.cta-button) {
+        flex: 1 1 calc(50% - var(--space-1));
+        font-size: var(--font-size-xs);
+      }
+
+      .cta-button {
+        flex: 1 1 100%;
+      }
+    }
+  }
+}
