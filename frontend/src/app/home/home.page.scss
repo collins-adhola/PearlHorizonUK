@@ -92,6 +92,11 @@
   }
 }
 
+// Services section with scroll offset for fixed header
+#services {
+  scroll-margin-top: 80px;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -112,6 +117,7 @@
       border: 1px solid rgba(0, 0, 0, 0.04);
       border-radius: 12px;
       overflow: hidden;
+      cursor: pointer;
 
       // Muted teal accent strip at top
       &::before {
@@ -126,10 +132,22 @@
         z-index: 1;
       }
 
-      // Primary card - stronger accent strip
-      &.ph-pathway-primary {
+      // Primary card - subtle enhancements
+      &.ph-pathway-primary.is-primary {
         &::before {
-          background-color: rgba(47, 164, 169, 0.85);
+          background-color: #2fa4a9; // Full opacity accent strip
+        }
+
+        // Slightly stronger shadow at rest
+        box-shadow: 0 4px 16px rgba(36, 50, 61, 0.08);
+
+        // Very subtle inner background tint
+        background: linear-gradient(to bottom, rgba(47, 164, 169, 0.02) 0%, #ffffff 100%);
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            box-shadow: 0 6px 24px rgba(36, 50, 61, 0.1);
+          }
         }
       }
 
@@ -143,10 +161,22 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
       transition: transform 180ms ease, box-shadow 180ms ease;
 
+      // Focus styles for accessibility
+      &:focus-visible {
+        outline: 2px solid #2fa4a9;
+        outline-offset: 2px;
+      }
+
       @media (hover: hover) and (pointer: fine) {
         &:hover {
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+          // Animate CTA arrow when card is hovered
+          ion-button.pathway-cta .card-cta-arrow {
+            transform: translateX(3px);
+            color: #2fa4a9;
+          }
         }
       }
 
@@ -213,20 +243,99 @@
           height: auto;
           min-height: auto;
 
-          &::after {
-            content: " →";
-            margin-left: 4px;
-            display: inline-block;
-            transition: transform 180ms ease;
+          // CTA container
+          .card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+            color: #1f4d5f;
           }
 
+          // Arrow styling
+          .card-cta-arrow {
+            font-size: 90%;
+            display: inline-block;
+            transform: translateY(0);
+            transition: transform 180ms ease, color 180ms ease;
+            vertical-align: baseline;
+            line-height: 1;
+          }
+
+          // Hover state - arrow moves right, subtle color change
           &:hover {
             --color: #1f4d5f;
             
-            &::after {
+            .card-cta-text {
+              color: #1f4d5f;
+            }
+
+            .card-cta-arrow {
               transform: translateX(3px);
+              color: #2fa4a9; // Accent color on hover
             }
           }
+
+          // Focus-visible state
+          &:focus-visible {
+            .card-cta-arrow {
+              color: #2fa4a9;
+            }
+          }
+
+          // Respect reduced motion preference
+          @media (prefers-reduced-motion: reduce) {
+            .card-cta-arrow {
+              transition: none;
+            }
+
+            &:hover .card-cta-arrow {
+              transform: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Micro-proof strip
+  .micro-proof {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    background-color: #f1f5f4;
+    border-radius: 8px;
+    padding: 16px 24px;
+    margin-top: 32px;
+
+    span {
+      font-size: 14px;
+      color: #5f6f7a;
+      line-height: 1.5;
+      position: relative;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 12px;
+        background-color: rgba(36, 50, 61, 0.15);
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px 16px;
+
+      span {
+        &:not(:last-child)::after {
+          display: none;
         }
       }
     }

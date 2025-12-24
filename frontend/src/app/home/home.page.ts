@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IonContent, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/angular/standalone';
 
 @Component({
@@ -17,10 +17,23 @@ import { IonContent, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardCon
   ],
 })
 export class HomePage {
+  constructor(private router: Router) {}
+
   scrollToServices() {
     const element = document.getElementById('services');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  goTo(path: string): void {
+    this.router.navigateByUrl(path);
+  }
+
+  onCardKeydown(event: KeyboardEvent, path: string): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.goTo(path);
     }
   }
 }

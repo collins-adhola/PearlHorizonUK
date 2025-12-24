@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonList, IonItem, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-invest-work',
@@ -8,12 +8,6 @@ import { IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonLi
   styleUrls: ['invest-work.page.scss'],
   imports: [
     IonContent,
-    IonCard,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardContent,
-    IonList,
-    IonItem,
     IonButton,
     RouterLink
   ],
