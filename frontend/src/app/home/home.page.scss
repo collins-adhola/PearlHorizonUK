@@ -1,8 +1,43 @@
+// Home page container - wider with reduced padding
+:host {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    @media (min-width: 1280px) {
+      max-width: 1280px;
+    }
+
+    @media (max-width: 1024px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (max-width: 768px) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
+
 .hero {
   text-align: center;
   background-color: #f1f5f4;
-  padding: var(--space-16) var(--space-4);
-  margin: 0 calc(-1 * var(--space-4));
+  padding: var(--space-16) 24px;
+  margin: 0 -24px;
+
+  @media (max-width: 1024px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 -20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--space-12) 16px;
+    margin: 0 -16px;
+  }
 
   h1 {
     font-size: 56px;
@@ -31,6 +66,30 @@
     max-width: 700px;
     margin: 0 auto 32px;
   }
+
+  // Hero CTA buttons
+  .hero-ctas {
+    ion-button[color="secondary"] {
+      // Primary CTA - solid teal button (already correct)
+      // No changes needed
+    }
+
+    ion-button[fill="outline"][color="primary"] {
+      // Ghost button - transparent with brand border
+      --background: transparent;
+      --border-color: #1f4d5f;
+      --border-width: 1px;
+      --border-style: solid;
+      --color: #1f4d5f;
+      --box-shadow: none;
+
+      &:hover:not([disabled]) {
+        --background: rgba(31, 77, 95, 0.04);
+        --border-color: #1f4d5f;
+        --color: #1f4d5f;
+      }
+    }
+  }
 }
 
 .services-grid {
@@ -50,11 +109,11 @@
       margin: 0;
       position: relative;
       background: #ffffff;
-      border: 1px solid rgba(36, 50, 61, 0.08);
-      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-radius: 12px;
       overflow: hidden;
 
-      // Accent line at top
+      // Muted teal accent strip at top
       &::before {
         content: "";
         position: absolute;
@@ -62,25 +121,32 @@
         left: 0;
         right: 0;
         height: 3px;
-        background-color: #2fa4a9;
-        border-radius: 16px 16px 0 0;
+        background-color: rgba(47, 164, 169, 0.6);
+        border-radius: 12px 12px 0 0;
         z-index: 1;
       }
 
-      // Premium padding
-      --padding-start: 28px;
-      --padding-end: 28px;
-      --padding-top: 32px;
-      --padding-bottom: 28px;
+      // Primary card - stronger accent strip
+      &.ph-pathway-primary {
+        &::before {
+          background-color: rgba(47, 164, 169, 0.85);
+        }
+      }
 
-      // Subtle shadow with hover enhancement
-      box-shadow: 0 2px 8px rgba(36, 50, 61, 0.06);
+      // Premium padding (28-32px)
+      --padding-start: 32px;
+      --padding-end: 32px;
+      --padding-top: 32px;
+      --padding-bottom: 32px;
+
+      // Soft depth & shadow
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
       transition: transform 180ms ease, box-shadow 180ms ease;
 
       @media (hover: hover) and (pointer: fine) {
         &:hover {
           transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgba(36, 50, 61, 0.1);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
         }
       }
 
@@ -127,7 +193,7 @@
           margin: 0;
         }
 
-        // Premium link-style CTA
+        // Premium link-style CTA with subtle arrow animation
         ion-button.pathway-cta {
           margin-top: auto;
           align-self: flex-start;
@@ -150,13 +216,16 @@
           &::after {
             content: " →";
             margin-left: 4px;
-            transition: color 180ms ease;
+            display: inline-block;
+            transition: transform 180ms ease;
           }
 
           &:hover {
-            --color: #2fa4a9;
-            text-decoration: underline;
-            text-underline-offset: 4px;
+            --color: #1f4d5f;
+            
+            &::after {
+              transform: translateX(3px);
+            }
           }
         }
       }
@@ -222,8 +291,6 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: var(--space-12) var(--space-4);
-
     h1 {
       font-size: 40px;
 
