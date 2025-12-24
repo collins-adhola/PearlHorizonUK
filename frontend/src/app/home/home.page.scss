@@ -3,11 +3,13 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
 
     @media (min-width: 1280px) {
       max-width: 1280px;
+      padding-left: 24px;
+      padding-right: 24px;
     }
 
     @media (max-width: 1024px) {
@@ -22,21 +24,37 @@
   }
 }
 
+// Hero Section
 .hero {
   text-align: center;
-  background-color: #f1f5f4;
-  padding: var(--space-16) 24px;
-  margin: 0 -24px;
+  background-color: rgba(241, 245, 244, 0.6);
+  border: 1px solid rgba(36, 50, 61, 0.08);
+  border-radius: 12px;
+  padding: var(--space-16) 32px;
+  margin: 0 auto var(--space-16);
+  max-width: 1000px;
 
   @media (max-width: 1024px) {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 -20px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   @media (max-width: 768px) {
-    padding: var(--space-12) 16px;
-    margin: 0 -16px;
+    padding: var(--space-12) 20px;
+  }
+
+  .trust-badge {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #24323d;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-6);
+    padding: 8px 16px;
+    background: rgba(47, 164, 169, 0.08);
+    border: 1px solid rgba(47, 164, 169, 0.2);
+    border-radius: 999px;
   }
 
   h1 {
@@ -47,6 +65,7 @@
     letter-spacing: -0.025em;
     position: relative;
     display: inline-block;
+    color: #24323d;
 
     &::after {
       content: "";
@@ -62,16 +81,20 @@
   .hero-subtext {
     font-size: 18px;
     line-height: 1.6;
-    color: var(--ion-color-medium);
-    max-width: 700px;
+    color: #5f6f7a;
+    max-width: 750px;
     margin: 0 auto 32px;
   }
 
   // Hero CTA buttons
   .hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+
     ion-button[color="secondary"] {
-      // Primary CTA - solid teal button (already correct)
-      // No changes needed
+      // Primary CTA - solid teal button
     }
 
     ion-button[fill="outline"][color="primary"] {
@@ -82,6 +105,7 @@
       --border-style: solid;
       --color: #1f4d5f;
       --box-shadow: none;
+      font-weight: 500;
 
       &:hover:not([disabled]) {
         --background: rgba(31, 77, 95, 0.04);
@@ -92,20 +116,82 @@
   }
 }
 
-// Services section with scroll offset for fixed header
-#services {
-  scroll-margin-top: 80px;
+// Bridge Section: Unfair Advantage
+.bridge-section {
+  margin-bottom: var(--space-12);
 }
 
-.services-grid {
+.bridge-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.bridge-card {
+  background: rgba(47, 164, 169, 0.04);
+  border: 1px solid rgba(47, 164, 169, 0.15);
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #24323d;
+    margin: 0 0 var(--space-3);
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #5f6f7a;
+    margin: 0;
+  }
+}
+
+// Pathways Section
+#pathways {
+  scroll-margin-top: 80px;
+  margin-bottom: var(--space-12);
+}
+
+.pathways-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 24px;
   align-items: stretch;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
   .service-card {
     display: flex;
     height: 100%;
+
+    &.featured-card {
+      grid-column: 1 / 2;
+
+      @media (max-width: 1024px) {
+        grid-column: 1;
+      }
+    }
 
     ion-card.ph-pathway-card {
       width: 100%;
@@ -132,21 +218,20 @@
         z-index: 1;
       }
 
-      // Primary card - subtle enhancements
-      &.ph-pathway-primary.is-primary {
+      // Featured card - stronger visual dominance
+      &.featured {
         &::before {
-          background-color: #2fa4a9; // Full opacity accent strip
+          background-color: #2fa4a9;
+          height: 4px;
         }
 
-        // Slightly stronger shadow at rest
         box-shadow: 0 4px 16px rgba(36, 50, 61, 0.08);
-
-        // Very subtle inner background tint
         background: linear-gradient(to bottom, rgba(47, 164, 169, 0.02) 0%, #ffffff 100%);
 
         @media (hover: hover) and (pointer: fine) {
           &:hover {
             box-shadow: 0 6px 24px rgba(36, 50, 61, 0.1);
+            transform: translateY(-2px);
           }
         }
       }
@@ -297,48 +382,91 @@
       }
     }
   }
+}
 
-  // Micro-proof strip
-  .micro-proof {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// The Advisory Process
+.advisory-process {
+  margin-bottom: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid rgba(36, 50, 61, 0.08);
+
+  .section-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #24323d;
+    text-align: center;
+    margin: 0 0 var(--space-8);
+    letter-spacing: -0.01em;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  .advisory-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    flex-wrap: wrap;
-    background-color: #f1f5f4;
-    border-radius: 8px;
-    padding: 16px 24px;
-    margin-top: 32px;
 
-    span {
-      font-size: 14px;
-      color: #5f6f7a;
-      line-height: 1.5;
-      position: relative;
-
-      &:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        right: -12px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1px;
-        height: 12px;
-        background-color: rgba(36, 50, 61, 0.15);
-      }
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
     @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 12px;
-      padding: 20px 16px;
-
-      span {
-        &:not(:last-child)::after {
-          display: none;
-        }
-      }
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 24px 20px;
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #2fa4a9;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-4);
+      line-height: 1;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #24323d;
+      margin: 0 0 var(--space-2);
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #5f6f7a;
+      margin: 0;
+    }
+  }
+}
+
+// How We Work Section
+.how-we-work {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid rgba(36, 50, 61, 0.08);
+
+  .pageTitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: #24323d;
+    text-align: center;
+    margin: 0 0 var(--space-6);
+    letter-spacing: -0.01em;
   }
 }
 
@@ -349,28 +477,32 @@
   margin: 0 auto;
 
   li {
-    font-size: 18px;
-    line-height: 1.8;
-    padding: 12px 0;
-    padding-left: 32px;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 10px 0;
+    padding-left: 24px;
     position: relative;
+    color: #5f6f7a;
 
     &::before {
       content: "•";
       position: absolute;
       left: 0;
-      color: var(--ion-color-primary);
-      font-size: 24px;
+      color: #2fa4a9;
+      font-size: 20px;
       line-height: 1;
+      font-weight: 600;
     }
   }
 }
 
+// Disclaimer Notice
 .notice {
   text-align: center;
-  background-color: var(--ion-color-light);
+  background-color: rgba(241, 245, 244, 0.5);
   border-radius: 8px;
-  padding: 32px 24px;
+  padding: 24px;
+  margin-bottom: var(--space-8);
 
   p {
     font-size: 14px;
@@ -378,13 +510,15 @@
     margin: 0;
     max-width: 800px;
     margin: 0 auto;
+    color: #5f6f7a;
   }
 }
 
+// Page End CTA Strip
 .ctaStrip {
   text-align: center;
-  background-color: #F1F5F4;
-  color: #24323D;
+  background-color: #f1f5f4;
+  color: #24323d;
   border: 1px solid rgba(36, 50, 61, 0.08);
   border-radius: 8px;
   padding: 48px 24px;
@@ -394,10 +528,11 @@
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 24px;
-    color: #24323D;
+    color: #24323d;
   }
 }
 
+// Mobile Responsive
 @media (max-width: 768px) {
   .hero {
     h1 {
@@ -414,16 +549,21 @@
       font-size: 16px;
       max-width: 100%;
     }
+
+    .trust-badge {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
   }
 
-  .services-grid {
+  .pathways-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
   .how-list {
     li {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 

@@ -20,7 +20,7 @@ export class HomePage {
   constructor(private router: Router) {}
 
   scrollToServices() {
-    const element = document.getElementById('services');
+    const element = document.getElementById('pathways');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }

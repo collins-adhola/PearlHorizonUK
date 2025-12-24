@@ -1,51 +1,67 @@
 <ion-content [fullscreen]="true">
   <div class="container">
-    <div class="page-header section">
-      <h1 class="pageTitle">Education Pathway Advisory</h1>
-      <p class="pageSub">Structured support for informed education decisions in Uganda.</p>
-    </div>
-
-    <section class="section">
-      <ion-card class="card">
-        <ion-card-header>
-          <ion-card-title>What we support:</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-list>
-            <ion-item>
-              <p>Shortlists and comparisons</p>
-            </ion-item>
-            <ion-item>
-              <p>Governance and safeguarding considerations</p>
-            </ion-item>
-            <ion-item>
-              <p>Admissions process guidance</p>
-            </ion-item>
-            <ion-item>
-              <p>Introductions to schools (where appropriate)</p>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
+    <!-- Hero Section -->
+    <section class="study-hero">
+      <span class="badge">For families & sponsors</span>
+      <h1>Education Pathway Advisory</h1>
+      <p class="hero-subtext">Structured support for informed education decisions in Uganda.</p>
+      <ion-button routerLink="/intake" [queryParams]="{ pathway: 'study' }" routerDirection="root" fill="solid" color="primary" size="large" class="hero-cta">
+        Request Study Intake
+      </ion-button>
     </section>
 
-    <section class="section">
-      <ion-card class="card boxed-card">
-        <ion-card-header>
-          <ion-card-title>Uganda Student Visa — Administrative Support</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p class="muted">We provide document checklists, preparation support, and application coordination for Uganda student visas. Applicants submit their applications, and decisions are made solely by the relevant authorities. No guarantees.</p>
-        </ion-card-content>
-      </ion-card>
-    </section>
-
-    <section class="section">
-      <div class="ctaRow">
-        <ion-button routerLink="/intake" [queryParams]="{ pathway: 'study' }" routerDirection="root" fill="solid" color="primary" size="large">
-          Request Education Advisory
-        </ion-button>
+    <!-- Bento Grid -->
+    <section class="study-grid">
+      <div class="study-card study-card-primary">
+        <h2>Primary Advisory</h2>
+        <p>Comprehensive guidance to help you make informed decisions about education pathways in Uganda.</p>
+        <ul class="feature-list">
+          <li>Shortlists and comparisons</li>
+          <li>Governance and safeguarding considerations</li>
+          <li>Admissions process guidance</li>
+          <li>Introductions to schools (where appropriate)</li>
+        </ul>
       </div>
+
+      <div class="study-card study-card-secondary">
+        <h2>Curriculum & Fit</h2>
+        <p>Helping you align curriculum options (British, IB, National) with long-term plans.</p>
+      </div>
+    </section>
+
+    <!-- Administrative Support Box -->
+    <section class="admin-box">
+      <h2>Uganda Student Visa — Administrative Support</h2>
+      <p>We provide document checklists, preparation support, and application coordination for Uganda student visas. Applicants submit their applications, and decisions are made solely by the relevant authorities. No guarantees.</p>
+      
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Document checklist & file readiness</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Timeline planning</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>School letter confirmation (where available)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer Banner -->
+    <section class="disclaimer-banner">
+      <strong>Advisory boundaries</strong>
+      <p>We provide independent advisory and administrative coordination only. We do not provide legal, immigration, or investment advice and do not guarantee outcomes.</p>
+    </section>
+
+    <!-- Page End CTA -->
+    <section class="page-cta">
+      <h2>Start with a Study Intake</h2>
+      <ion-button routerLink="/intake" [queryParams]="{ pathway: 'study' }" routerDirection="root" fill="solid" color="primary" size="large">
+        Request Intake
+      </ion-button>
     </section>
   </div>
 </ion-content>

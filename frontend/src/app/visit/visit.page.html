@@ -1,52 +1,67 @@
 <ion-content [fullscreen]="true">
   <div class="container">
-    <div class="page-header section">
-      <h1 class="pageTitle">Curated Visits & Group Pathways</h1>
-      <p class="pageSub">A trusted first step for individuals and groups exploring Uganda.</p>
-    </div>
-
-    <section class="section">
-      <ion-card class="card">
-        <ion-card-header>
-          <ion-card-title>What we offer:</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-list>
-            <ion-item>
-              <p>Referrals to vetted operators</p>
-            </ion-item>
-            <ion-item>
-              <p>Group visit coordination (fixed scope)</p>
-            </ion-item>
-            <ion-item>
-              <p>Pre-travel briefing pack</p>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
+    <!-- Hero Section -->
+    <section class="visit-hero">
+      <span class="badge">For individuals & groups</span>
+      <h1>Curated Visits & Group Pathways</h1>
+      <p class="hero-subtext">A trusted first step for individuals and groups exploring Uganda.</p>
+      <ion-button routerLink="/intake" [queryParams]="{ pathway: 'visit' }" routerDirection="root" fill="solid" color="primary" size="large" class="hero-cta">
+        Request Trip Intake
+      </ion-button>
     </section>
 
-    <section class="section">
-      <ion-card class="card boxed-card">
-        <ion-card-header>
-          <ion-card-title>Uganda Tourist Visa — Administrative Support</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p class="muted">We provide document checklists, preparation support, and application coordination for Uganda tourist visas. Applicants submit their applications, and decisions are made solely by the relevant authorities.</p>
-        </ion-card-content>
-      </ion-card>
-    </section>
-
-    <section class="section">
-      <p class="muted notice-text">We do not operate tours. Partner services may be commission-based.</p>
-    </section>
-
-    <section class="section">
-      <div class="ctaRow">
-        <ion-button routerLink="/intake" [queryParams]="{ pathway: 'visit' }" routerDirection="root" fill="solid" color="primary" size="large">
-          Request Trip Intake
-        </ion-button>
+    <!-- Bento Grid -->
+    <section class="visit-grid">
+      <div class="visit-card visit-card-primary">
+        <h2>What we offer</h2>
+        <p>Comprehensive support to help you plan and coordinate your visit to Uganda with confidence.</p>
+        <ul class="feature-list">
+          <li>Referrals to vetted operators and hotels</li>
+          <li>Group visit coordination (fixed scope)</li>
+          <li>Pre-travel briefing pack</li>
+          <li>Optional itinerary review (where appropriate)</li>
+        </ul>
       </div>
+
+      <div class="visit-card visit-card-secondary">
+        <h2>What you get</h2>
+        <p>Clear steps, vetted referrals, and a written briefing — so you travel with confidence.</p>
+      </div>
+    </section>
+
+    <!-- Administrative Support Box -->
+    <section class="admin-box">
+      <h2>Uganda Tourist Visa — Administrative Support</h2>
+      <p>We provide document checklists, preparation support, and application coordination for Uganda tourist visas. Applicants submit their applications, and decisions are made solely by the relevant authorities. No guarantees.</p>
+      
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Document checklist & file readiness</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Timeline planning</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Submission guidance (applicant submits)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Services Banner -->
+    <section class="partner-banner">
+      <strong>Partner services</strong>
+      <p>We do not operate tours. Travel services are delivered by independent partners. Some referrals may be commission-based.</p>
+    </section>
+
+    <!-- Page End CTA -->
+    <section class="page-cta">
+      <h2>Start with a Trip Intake</h2>
+      <ion-button routerLink="/intake" [queryParams]="{ pathway: 'visit' }" routerDirection="root" fill="solid" color="primary" size="large">
+        Request Intake
+      </ion-button>
     </section>
   </div>
 </ion-content>

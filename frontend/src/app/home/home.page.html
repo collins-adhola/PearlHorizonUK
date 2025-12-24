@@ -1,37 +1,57 @@
 <ion-content [fullscreen]="true">
   <div class="container">
+    <!-- Hero Section -->
     <section class="hero section">
-      <h1>Clarity before commitment.</h1>
-      <p class="hero-subtext">Independent Uganda Entry Advisory for international clients — clarifying pathways, risks, and requirements before you commit time, capital, or people.</p>
+      <span class="trust-badge">London · Kampala — UK accountability with grounded local verification</span>
+      <h1>The London Gateway for Secure Ugandan Engagement.</h1>
+      <p class="hero-subtext">Strategic entry advisory and on-the-ground verification for international investors, professionals, and families.</p>
       <div class="hero-ctas ctaRow">
         <ion-button routerLink="/intake" routerDirection="root" fill="solid" color="secondary">Request Advisory Intake</ion-button>
-        <ion-button (click)="scrollToServices()" fill="outline" color="primary">View Services</ion-button>
+        <ion-button (click)="scrollToServices()" fill="outline" color="primary">View services</ion-button>
       </div>
     </section>
 
-    <section id="services" class="section">
-      <div class="services-grid">
-        <div class="service-card">
-          <ion-card class="card ph-pathway-card ph-pathway-primary is-primary"
+    <!-- Bridge Section: Unfair Advantage -->
+    <section class="bridge-section section">
+      <div class="bridge-grid">
+        <div class="bridge-card">
+          <h3>UK-Based Professional Standards</h3>
+          <p>We operate under UK professional norms, providing a secure, local point of contact for your international interests.</p>
+        </div>
+        <div class="bridge-card">
+          <h3>Deep Ugandan Roots</h3>
+          <p>Direct access to a vetted network of professionals in Kampala to verify what brochures won't tell you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pathways Section -->
+    <section id="pathways" class="section">
+      <div class="pathways-grid">
+        <!-- Featured: Invest & Work -->
+        <div class="service-card featured-card">
+          <ion-card class="card ph-pathway-card ph-pathway-primary is-primary featured"
                     role="link"
                     tabindex="0"
                     (click)="goTo('/invest-work')"
                     (keydown)="onCardKeydown($event, '/invest-work')">
             <ion-card-header>
-              <span class="pathway-descriptor">For organisations</span>
-              <ion-card-title>Invest & Work</ion-card-title>
+              <span class="pathway-descriptor">For investors & operators</span>
+              <ion-card-title>Capital & Operations</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <p>Entry Advisory for organisations and individuals exploring Uganda engagement.</p>
+              <p>Entry advisory for institutional investors and entrepreneurs. We verify the landscape so your venture starts on solid ground.</p>
               <ion-button routerLink="/invest-work" routerDirection="root" fill="outline" color="primary" class="pathway-cta" (click)="$event.stopPropagation()">
                 <span class="card-cta">
-                  <span class="card-cta-text">Explore Advisory</span>
+                  <span class="card-cta-text">Explore advisory</span>
                   <span class="card-cta-arrow">→</span>
                 </span>
               </ion-button>
             </ion-card-content>
           </ion-card>
         </div>
+
+        <!-- Study -->
         <div class="service-card">
           <ion-card class="card ph-pathway-card"
                     role="link"
@@ -40,19 +60,21 @@
                     (keydown)="onCardKeydown($event, '/study')">
             <ion-card-header>
               <span class="pathway-descriptor">For families</span>
-              <ion-card-title>Study</ion-card-title>
+              <ion-card-title>Safeguarding & Governance</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <p>Education pathway advisory for families and sponsors.</p>
+              <p>Bespoke advisory for families. We review institutional standards and safeguarding to support informed decisions.</p>
               <ion-button routerLink="/study" routerDirection="root" fill="outline" color="primary" class="pathway-cta" (click)="$event.stopPropagation()">
                 <span class="card-cta">
-                  <span class="card-cta-text">View School Options</span>
+                  <span class="card-cta-text">View education pathway</span>
                   <span class="card-cta-arrow">→</span>
                 </span>
               </ion-button>
             </ion-card-content>
           </ion-card>
         </div>
+
+        <!-- Visit -->
         <div class="service-card">
           <ion-card class="card ph-pathway-card"
                     role="link"
@@ -60,14 +82,14 @@
                     (click)="goTo('/visit')"
                     (keydown)="onCardKeydown($event, '/visit')">
             <ion-card-header>
-              <span class="pathway-descriptor">For individuals & groups</span>
-              <ion-card-title>Visit</ion-card-title>
+              <span class="pathway-descriptor">For retirees & explorers</span>
+              <ion-card-title>Curated Strategic Briefing</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <p>Curated visits and group pathways with vetted partners.</p>
+              <p>Not a tour—an on-the-ground evaluation for those exploring residency, retirement, or a future base in Uganda.</p>
               <ion-button routerLink="/visit" routerDirection="root" fill="outline" color="primary" class="pathway-cta" (click)="$event.stopPropagation()">
                 <span class="card-cta">
-                  <span class="card-cta-text">Request Vetted Trip</span>
+                  <span class="card-cta-text">Explore visit pathways</span>
                   <span class="card-cta-arrow">→</span>
                 </span>
               </ion-button>
@@ -75,16 +97,37 @@
           </ion-card>
         </div>
       </div>
+    </section>
 
-      <!-- Micro-proof strip -->
-      <div class="micro-proof">
-        <span>Paid advisory · Fixed scope</span>
-        <span>Written outputs, clear boundaries</span>
-        <span>UK-based accountability</span>
+    <!-- The Advisory Process -->
+    <section class="advisory-process section">
+      <h2 class="section-title">The Advisory Process</h2>
+      <div class="advisory-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Intake</h3>
+          <p>Define your scope and risk profile.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Verification</h3>
+          <p>London + Kampala teams audit the opportunity.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Clarity Report</h3>
+          <p>Written briefing on risks and requirements.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Coordination</h3>
+          <p>Audit-ready administrative support where appropriate.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- How We Work -->
+    <section class="section how-we-work">
       <h2 class="pageTitle">How We Work</h2>
       <ul class="how-list">
         <li>Advisory-led, not operational</li>
@@ -94,10 +137,12 @@
       </ul>
     </section>
 
+    <!-- Disclaimer -->
     <section class="section notice">
       <p class="muted">We provide independent advisory and administrative coordination only. We do not provide legal, immigration, or investment advice and do not guarantee outcomes.</p>
     </section>
 
+    <!-- Page End CTA -->
     <section class="section ctaStrip">
       <p>Start with an Advisory Intake</p>
       <ion-button routerLink="/intake" routerDirection="root" fill="solid" color="secondary">Request Intake</ion-button>

@@ -1,118 +1,110 @@
 <ion-content [fullscreen]="true">
   <div class="container">
-    <!-- Page Header -->
-    <div class="page-header section">
-      <h1 class="pageTitle">Invest & Work</h1>
-      <p class="pageSub">Uganda Market Entry Advisory & Due Diligence</p>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero section">
-      <h2>Entering Uganda requires more than opportunity — it requires clarity.</h2>
-      <p>Pearl Horizon provides independent Uganda Market Entry Advisory to help UK-based and international clients understand viable entry pathways, identify risks, and verify local requirements before committing capital, people, or reputation.</p>
-      <p>We combine UK-based governance and accountability with grounded local context to support confident, informed decision-making.</p>
+    <section class="invest-hero">
+      <span class="badge">For organisations & founders</span>
+      <h1>Uganda Entry Advisory</h1>
+      <p class="hero-subtext">
+        Independent market entry advisory to help you map pathways, understand
+        risks, and verify requirements before committing capital or people.
+      </p>
+      <ion-button
+        routerLink="/intake"
+        routerDirection="root"
+        fill="solid"
+        color="primary"
+        size="large"
+        class="hero-cta"
+      >
+        Request Advisory Intake
+      </ion-button>
     </section>
 
-    <!-- What You Receive Section -->
-    <section class="section">
-      <h2>What You Receive: A Structured Advisory Brief</h2>
-      <p class="section-intro">This service is delivered as a fixed-scope, paid engagement with a clear written output.</p>
-      
-      <div class="advisory-items">
-        <div class="advisory-item card">
-          <h3>Entry Pathway Overview</h3>
-          <p>High-level analysis of commercial, operational, and mission-led entry routes (e.g. company formation, partnerships, NGOs, representative presence).</p>
-        </div>
-
-        <div class="advisory-item card">
-          <h3>Regulatory Landscape Map (Non-Legal)</h3>
-          <p>A structured overview of key institutions (e.g. URA, URSB, UIA) and typical compliance touchpoints relevant to your scenario.</p>
-        </div>
-
-        <div class="advisory-item card">
-          <h3>Risk & Failure Pattern Analysis</h3>
-          <p>Common pitfalls, structural risks, and decision-readiness guidance — proceed, pause, or re-scope.</p>
-        </div>
-
-        <div class="advisory-item card">
-          <h3>Partner & Entity Verification (Where Relevant)</h3>
-          <p>Basic verification checks on proposed local partners, entities, or arrangements to support informed decisions.</p>
-        </div>
-
-        <div class="advisory-item card">
-          <h3>Optional Introductions</h3>
-          <p>Introductions to vetted, independent local professionals (e.g. lawyers, accountants, sector specialists), where appropriate.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Professional Boundaries Section -->
-    <section class="section">
-      <h2>Professional Boundaries (What This Is / Is Not)</h2>
-      <p class="section-intro">We operate with clear boundaries to protect both your interests and our professional integrity.</p>
-      
-      <div class="boundaries-grid">
-        <div class="boundary-card card">
-          <h3>This IS:</h3>
-          <ul class="boundary-list">
-            <li>Independent advisory and structured analysis</li>
-            <li>Verification support and decision-focused guidance</li>
-            <li>UK-based accountability and process management</li>
-          </ul>
-        </div>
-
-        <div class="boundary-card card">
-          <h3>This IS NOT:</h3>
-          <ul class="boundary-list">
-            <li>Legal advice (we are not solicitors)</li>
-            <li>Execution, project management, or operational delivery</li>
-            <li>Immigration advice or visa guarantees</li>
-            <li>Financial or investment guarantees</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Who This Is For Section -->
-    <section class="section">
-      <h2>Who This Is For</h2>
-      <p class="section-intro">This service is designed for clients who value governance, structure, and risk management, including:</p>
-      
-      <ul class="who-list">
-        <li>International entrepreneurs and SMEs testing the Ugandan market</li>
-        <li>Organisations requiring a structured, accountable entry assessment</li>
-        <li>Group investors or sponsors seeking due diligence support</li>
-        <li>NGOs and faith-based institutions navigating compliance considerations</li>
-      </ul>
-      
-      <p class="muted">We intentionally work with a limited number of engagements to maintain quality and focus.</p>
-    </section>
-
-    <!-- Engagement Format & Fees Section -->
-    <section class="section">
-      <h2>Engagement Format & Fees</h2>
-      <p>We work on a fixed-scope, upfront fee model to ensure clarity and commitment on both sides.</p>
-      
-      <div class="format-section">
-        <h3>Format</h3>
-        <ul class="format-list">
-          <li>Written advisory brief</li>
-          <li>Limited advisory discussion(s), as scoped</li>
+    <!-- Bento Grid -->
+    <section class="invest-grid">
+      <div class="invest-card invest-card-primary">
+        <h2>What's included</h2>
+        <p>
+          A fixed-scope, paid engagement resulting in a written advisory brief
+          and decision-ready next steps.
+        </p>
+        <ul class="feature-list">
+          <li>
+            Entry pathway overview (commercial, organisational, mission-led)
+          </li>
+          <li>High-level regulatory landscape awareness (non-legal)</li>
+          <li>Risk patterns and common failure points</li>
+          <li>Verification support where relevant</li>
+          <li>Decision readiness: proceed / pause / re-scope</li>
+          <li>Optional introductions (where appropriate)</li>
         </ul>
       </div>
 
-      <div class="fees-section">
-        <h3>Fees</h3>
-        <p>Entry Advisory Briefs typically range from £750–£1,500, depending on complexity and scope.</p>
+      <div class="invest-card invest-card-secondary">
+        <h2>Best for</h2>
+        <ul class="feature-list">
+          <li>SMEs testing the market</li>
+          <li>Sponsors / group investors</li>
+          <li>Organisations planning entry</li>
+          <li>NGOs & mission-led projects</li>
+        </ul>
       </div>
-      
-      <p class="muted">Final scope and pricing are confirmed following intake review.</p>
     </section>
 
-    <!-- CTA Strip -->
-    <section class="section ctaStrip">
-      <h2>Explore Uganda with clarity, not assumptions.</h2>
-      <ion-button routerLink="/intake" routerDirection="root" fill="solid" color="secondary">Request Advisory Intake</ion-button>
+    <!-- How Engagements Work Box -->
+    <section class="process-box">
+      <h2>How engagements work</h2>
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Scope agreed upfront</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Fixed fee confirmed</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Written brief delivered</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Close-out call + next steps</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verification Support Micro-Card -->
+    <section class="verification-card">
+      <h3>Verification support (where relevant)</h3>
+      <p>
+        Basic verification checks on proposed partners or entities can be
+        included where appropriate. Scope is confirmed before work begins.
+      </p>
+    </section>
+
+    <!-- Boundaries Disclaimer Banner -->
+    <section class="disclaimer-banner">
+      <strong>Advisory boundaries</strong>
+      <p>
+        We provide independent advisory and administrative coordination only. We
+        do not provide legal, immigration, or investment advice and do not
+        guarantee outcomes.
+      </p>
+    </section>
+
+    <!-- Page End CTA -->
+    <section class="page-cta">
+      <h2>Start with an Advisory Intake</h2>
+      <ion-button
+        routerLink="/intake"
+        routerDirection="root"
+        fill="solid"
+        color="primary"
+        size="large"
+      >
+        Request Intake
+      </ion-button>
     </section>
   </div>
 </ion-content>
