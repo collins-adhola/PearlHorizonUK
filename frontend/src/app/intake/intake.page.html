@@ -94,7 +94,7 @@
       <div class="submit-section">
         <ion-button 
           type="submit" 
-          [disabled]="!intakeForm.valid" 
+          [disabled]="!intakeForm.valid || isSubmitting" 
           fill="solid" 
           color="primary" 
           size="large"

@@ -1,11 +1,13 @@
 ion-header {
   ion-toolbar {
-    --background: var(--color-primary);
-    --color: var(--color-text-inverse);
+    --background: #F9FAF8;
+    --color: #24323D;
     display: flex;
     align-items: center;
-    box-shadow: var(--app-shadow-sm);
-    border-bottom: var(--app-card-border);
+    box-shadow: none;
+    border-bottom: 1px solid rgba(36, 50, 61, 0.08);
+    min-height: 56px;
+    padding: var(--space-2) 0;
   }
 
   ion-title {
@@ -16,9 +18,10 @@ ion-header {
     font-weight: var(--font-weight-semibold);
     letter-spacing: var(--tracking-tight);
     padding: var(--space-2) var(--space-4);
+    color: #24323D;
   }
 
-  .nav-buttons {
+    .nav-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
@@ -36,11 +39,35 @@ ion-header {
       --padding-end: var(--space-3);
       --padding-top: var(--space-2);
       --padding-bottom: var(--space-2);
+      --color: #24323D;
+      position: relative;
+    }
+
+    ion-button:hover {
+      --color: #1F4D5F;
+    }
+
+    ion-button.ion-activated,
+    ion-button[routerLinkActive] {
+      --color: #24323D;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    ion-button.ion-activated::after,
+    ion-button[routerLinkActive]::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: var(--space-3);
+      right: var(--space-3);
+      height: 2px;
+      background: #2FA4A9;
+      border-radius: 1px;
     }
 
     .cta-button {
       flex-shrink: 0;
-      --box-shadow: var(--app-shadow-sm);
+      --box-shadow: 0 2px 4px rgba(47, 164, 169, 0.2);
     }
   }
 }

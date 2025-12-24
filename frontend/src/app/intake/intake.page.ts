@@ -15,6 +15,7 @@ import {
   IonToast,
   ToastController
 } from '@ionic/angular/standalone';
+import { IntakeApiService } from '../services/intake-api.service';
 
 @Component({
   selector: 'app-intake',
@@ -58,11 +59,13 @@ export class IntakePage implements OnInit {
   ];
   showToast = false;
   toastMessage = '';
+  isSubmitting = false;
 
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private intakeApiService: IntakeApiService
   ) {
     this.intakeForm = this.fb.group({
       fullName: ['', [Validators.required]],
@@ -95,20 +98,56 @@ export class IntakePage implements OnInit {
   }
 
   async onSubmit() {
-    if (this.intakeForm.valid) {
-      const payload = this.intakeForm.value;
-      console.log('Intake form payload:', payload);
+    if (this.intakeForm.valid && !this.isSubmitting) {
+      this.isSubmitting = true;
 
-      // TODO: Add Supabase insert + Zoho notification
-      
-      const toast = await this.toastController.create({
-        message: 'Thanks — we\'ll respond within 2 business days.',
-        duration: 3000,
-        position: 'bottom',
-        color: 'success'
+      // Map form values to backend expected format
+      const formValue = this.intakeForm.value;
+      const payload = {
+        fullName: formValue.fullName,
+        email: formValue.email,
+        phone: formValue.phone || undefined,
+        countryTimezone: formValue.country || undefined,
+        pathway: formValue.pathway,
+        goal: formValue.goal,
+        timeline: formValue.timeline,
+        budgetRange: formValue.budget,
+        canShareDocs: formValue.canShareDocuments || false,
+        consent: formValue.consent
+      };
+
+      this.intakeApiService.submitIntake(payload).subscribe({
+        next: () => {
+          this.isSubmitting = false;
+          this.showSuccessToast();
+          this.intakeForm.reset();
+        },
+        error: () => {
+          this.isSubmitting = false;
+          this.showErrorToast();
+        }
       });
-      await toast.present();
     }
+  }
+
+  private async showSuccessToast() {
+    const toast = await this.toastController.create({
+      message: 'Thanks — we\'ll respond within 2 business days.',
+      duration: 3000,
+      position: 'bottom',
+      color: 'success'
+    });
+    await toast.present();
+  }
+
+  private async showErrorToast() {
+    const toast = await this.toastController.create({
+      message: 'Something went wrong. Please try again.',
+      duration: 3000,
+      position: 'bottom',
+      color: 'danger'
+    });
+    await toast.present();
   }
 }
 

@@ -1,12 +1,27 @@
 .hero {
   text-align: center;
+  background-color: #f1f5f4;
+  padding: var(--space-16) var(--space-4);
+  margin: 0 calc(-1 * var(--space-4));
 
   h1 {
     font-size: 56px;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
+    margin-bottom: 0;
+    letter-spacing: -0.025em;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 64px;
+      height: 3px;
+      background-color: #2fa4a9;
+      border-radius: 2px;
+      margin: 12px auto 24px;
+    }
   }
 
   .hero-subtext {
@@ -33,32 +48,95 @@
       display: flex;
       flex-direction: column;
       margin: 0;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+
+      // Accent line at top
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: #2fa4a9;
+        border-radius: 12px 12px 0 0;
+        z-index: 1;
+      }
+
+      // Increased padding for premium feel
+      --padding-start: 28px;
+      --padding-end: 28px;
+      --padding-top: 32px;
+      --padding-bottom: 28px;
+
+      // Enhanced shadow and hover
+      box-shadow: 0 2px 8px rgba(36, 50, 61, 0.06);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 16px rgba(36, 50, 61, 0.1);
+        }
+      }
 
       ion-card-header {
-        padding-bottom: 8px;
+        padding-bottom: 12px;
       }
 
       ion-card-title {
-        font-size: 24px;
-        font-weight: 600;
+        font-size: 26px;
+        font-weight: 700;
+        color: #24323d;
+        line-height: 1.3;
       }
 
       ion-card-content {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 20px;
 
         p {
           font-size: 16px;
-          line-height: 1.6;
-          color: var(--ion-color-medium);
+          line-height: 1.7;
+          color: #5f6f7a;
           margin: 0;
         }
 
+        // Text-link style for CTA
         ion-button {
           margin-top: auto;
           align-self: flex-start;
+          --background: transparent;
+          --border-width: 0;
+          --border-style: none;
+          --box-shadow: none;
+          --padding-start: 0;
+          --padding-end: 0;
+          --padding-top: 8px;
+          --padding-bottom: 8px;
+          --color: #1f4d5f;
+          font-size: 16px;
+          font-weight: 500;
+          text-transform: none;
+          letter-spacing: normal;
+          height: auto;
+          min-height: auto;
+
+          &::after {
+            content: " →";
+            margin-left: 4px;
+            transition: color 180ms ease;
+          }
+
+          &:hover {
+            --color: #2fa4a9;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+          }
         }
       }
     }
@@ -106,22 +184,33 @@
 
 .ctaStrip {
   text-align: center;
-  background-color: var(--ion-color-primary);
-  color: var(--ion-color-primary-contrast);
+  background-color: #F1F5F4;
+  color: #24323D;
+  border: 1px solid rgba(36, 50, 61, 0.08);
   border-radius: 8px;
   padding: 48px 24px;
+  box-shadow: 0 2px 8px rgba(36, 50, 61, 0.04);
 
   p {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 24px;
+    color: #24323D;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
+    padding: var(--space-12) var(--space-4);
+
     h1 {
       font-size: 40px;
+
+      &::after {
+        width: 48px;
+        height: 2px;
+        margin: 10px auto 20px;
+      }
     }
 
     .hero-subtext {

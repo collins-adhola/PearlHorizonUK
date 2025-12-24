@@ -8,22 +8,22 @@
   --contact-email: "info@certifile.co.uk";
   --contact-address: "123 Compliance Street, London EC1A 1BB";
 
-  // Professional UK Corporate Color Palette - Compliance & Trust
-  --color-primary: #243244; // Deep navy - authority, trust, stability
-  --color-primary-light: #2d3748; // Lighter navy for hover states
-  --color-primary-dark: #0f1419; // Darker navy for pressed states
+  // Pearl Horizon UK - Warm, Modern Consulting Palette
+  --color-primary: #1f4d5f; // Primary brand colour - used sparingly
+  --color-primary-light: #2a5f75; // Lighter primary for hover states
+  --color-primary-dark: #183a48; // Darker primary for pressed states
 
-  --color-accent: #2563eb; // Professional blue - reliability, expertise
-  --color-accent-light: #3b82f6; // Lighter blue for highlights
-  --color-accent-dark: #1d4ed8; // Darker blue for emphasis
+  --color-accent: #2fa4a9; // Accent / CTA colour
+  --color-accent-light: #3bb5ba; // Lighter accent for highlights
+  --color-accent-dark: #268a8f; // Darker accent for emphasis
 
-  --color-secondary: #64748b; // Sophisticated slate - neutrality, balance
-  --color-secondary-light: #94a3b8; // Light slate for subtle elements
-  --color-secondary-dark: #475569; // Dark slate for text
+  --color-secondary: #5f6f7a; // Muted text / secondary elements
+  --color-secondary-light: #7a8a95; // Light secondary
+  --color-secondary-dark: #4a5a65; // Dark secondary
 
-  --color-success: #059669; // Professional green - compliance, approval
-  --color-success-light: #10b981; // Light green for success states
-  --color-success-dark: #047857; // Dark green for emphasis
+  --color-success: #2fa4a9; // Use accent for success
+  --color-success-light: #3bb5ba; // Light success states
+  --color-success-dark: #268a8f; // Dark success emphasis
 
   --color-warning: #d97706; // Amber - attention, caution
   --color-warning-light: #f59e0b; // Light amber
@@ -33,29 +33,34 @@
   --color-error-light: #ef4444; // Light red
   --color-error-dark: #b91c1c; // Dark red
 
-  --color-background: #ffffff; // Pure white - cleanliness, clarity
-  --color-surface: #f8fafc; // Very light gray - subtle separation
-  --color-surface-elevated: #ffffff; // Elevated surfaces
-  --color-border: #e2e8f0; // Light border - subtle definition
-  --color-border-light: #f1f5f9; // Very light border
-  --color-border-dark: #cbd5e1; // Darker border for emphasis
+  --color-background: #f9faf8; // Page background - warm, calm
+  --color-surface: #f1f5f4; // Soft section background
+  --color-surface-elevated: #ffffff; // Card background
+  --app-surface-tint: #f1f5f4; // Soft section background
+  --color-border: rgba(36, 50, 61, 0.08); // Borders/dividers
+  --color-border-light: rgba(36, 50, 61, 0.04); // Very light border
+  --color-border-dark: rgba(36, 50, 61, 0.12); // Darker border for emphasis
 
-  // Text colors with proper contrast ratios
-  --color-text-primary: #1e293b; // Dark slate - primary text (4.5:1 contrast)
-  --color-text-secondary: #64748b; // Medium slate - secondary text (4.5:1 contrast)
-  --color-text-muted: #94a3b8; // Light slate - muted text (4.5:1 contrast)
-  --color-text-inverse: #ffffff; // White text for dark backgrounds
+  // Text colors - no black, warm and readable
+  --color-text-primary: #24323d; // Primary text - replaces black
+  --color-text-secondary: #5f6f7a; // Secondary text
+  --color-text-muted: #5f6f7a; // Muted text
+  --color-text-inverse: #ffffff; // White text for accent buttons only
 
-  // Ionic color mapping - Professional Corporate
-  --ion-color-primary: var(--color-primary);
-  --ion-color-primary-contrast: var(--color-text-inverse);
-  --ion-color-primary-shade: var(--color-primary-dark);
-  --ion-color-primary-tint: var(--color-primary-light);
+  // Ionic color mapping - Pearl Horizon UK
+  --ion-color-primary: #1f4d5f;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #183a48;
+  --ion-color-primary-tint: #2a5f75;
 
-  --ion-color-secondary: var(--color-accent);
-  --ion-color-secondary-contrast: var(--color-text-inverse);
-  --ion-color-secondary-shade: var(--color-accent-dark);
-  --ion-color-secondary-tint: var(--color-accent-light);
+  --ion-color-secondary: #2fa4a9;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-shade: #268a8f;
+  --ion-color-secondary-tint: #3bb5ba;
+
+  // Ionic background and text
+  --ion-background-color: #f9faf8;
+  --ion-text-color: #24323d;
 
   --ion-color-tertiary: var(--color-secondary);
   --ion-color-tertiary-contrast: var(--color-text-inverse);
