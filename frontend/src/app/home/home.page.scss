@@ -43,13 +43,15 @@
     display: flex;
     height: 100%;
 
-    ion-card {
+    ion-card.ph-pathway-card {
       width: 100%;
       display: flex;
       flex-direction: column;
       margin: 0;
       position: relative;
-      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid rgba(36, 50, 61, 0.08);
+      border-radius: 16px;
       overflow: hidden;
 
       // Accent line at top
@@ -61,17 +63,17 @@
         right: 0;
         height: 3px;
         background-color: #2fa4a9;
-        border-radius: 12px 12px 0 0;
+        border-radius: 16px 16px 0 0;
         z-index: 1;
       }
 
-      // Increased padding for premium feel
+      // Premium padding
       --padding-start: 28px;
       --padding-end: 28px;
       --padding-top: 32px;
       --padding-bottom: 28px;
 
-      // Enhanced shadow and hover
+      // Subtle shadow with hover enhancement
       box-shadow: 0 2px 8px rgba(36, 50, 61, 0.06);
       transition: transform 180ms ease, box-shadow 180ms ease;
 
@@ -83,14 +85,33 @@
       }
 
       ion-card-header {
-        padding-bottom: 12px;
-      }
+        padding-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
 
-      ion-card-title {
-        font-size: 26px;
-        font-weight: 700;
-        color: #24323d;
-        line-height: 1.3;
+        // Descriptor badge
+        .pathway-descriptor {
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          color: #1f4d5f;
+          background: rgba(47, 164, 169, 0.10);
+          border: 1px solid rgba(47, 164, 169, 0.18);
+          padding: 6px 10px;
+          border-radius: 999px;
+          width: fit-content;
+        }
+
+        ion-card-title {
+          font-size: 26px;
+          font-weight: 700;
+          color: #24323d;
+          line-height: 1.3;
+          margin: 0;
+        }
       }
 
       ion-card-content {
@@ -101,13 +122,13 @@
 
         p {
           font-size: 16px;
-          line-height: 1.7;
+          line-height: 1.6;
           color: #5f6f7a;
           margin: 0;
         }
 
-        // Text-link style for CTA
-        ion-button {
+        // Premium link-style CTA
+        ion-button.pathway-cta {
           margin-top: auto;
           align-self: flex-start;
           --background: transparent;

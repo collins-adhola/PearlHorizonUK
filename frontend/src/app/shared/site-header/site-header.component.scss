@@ -10,7 +10,7 @@ ion-header {
     padding: var(--space-2) 0;
   }
 
-  ion-title {
+  .logo-title {
     flex: 0 0 auto;
     text-align: left;
     font-family: var(--font-family-base);
@@ -18,7 +18,17 @@ ion-header {
     font-weight: var(--font-weight-semibold);
     letter-spacing: var(--tracking-tight);
     padding: var(--space-2) var(--space-4);
-    color: #24323D;
+    --color: #24323D;
+    --background: transparent;
+    --box-shadow: none;
+    margin: 0;
+    height: auto;
+    text-transform: none;
+    cursor: pointer;
+
+    &:hover {
+      --color: #1f4d5f;
+    }
   }
 
     .nav-buttons {
@@ -79,7 +89,7 @@ ion-header {
       min-height: auto;
     }
 
-    ion-title {
+    .logo-title {
       width: 100%;
       text-align: center;
       margin-bottom: var(--space-2);
