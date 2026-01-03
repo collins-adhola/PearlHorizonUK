@@ -2,12 +2,26 @@
   <div class="container">
     <!-- Hero Section -->
     <section class="hero section">
-      <span class="trust-badge">London · Kampala — UK accountability with grounded local verification</span>
-      <h1>The London Gateway for Secure Ugandan Engagement.</h1>
-      <p class="hero-subtext">Strategic entry advisory and on-the-ground verification for international investors, professionals, and families.</p>
+      <span class="trust-badge"
+        >LONDON · KAMPALA — UK-based accountability with grounded local
+        context</span
+      >
+      <h1>The London Gateway for Ugandan Engagement.</h1>
+      <p class="hero-subtext">
+        Strategic entry advisory and on-the-ground checks where appropriate for
+        investors, professionals, and families.
+      </p>
       <div class="hero-ctas ctaRow">
-        <ion-button routerLink="/intake" routerDirection="root" fill="solid" color="secondary">Request Advisory Intake</ion-button>
-        <ion-button (click)="scrollToServices()" fill="outline" color="primary">View services</ion-button>
+        <ion-button
+          routerLink="/intake"
+          routerDirection="root"
+          fill="solid"
+          color="secondary"
+          >Request Advisory Intake</ion-button
+        >
+        <ion-button (click)="scrollToServices()" fill="outline" color="primary"
+          >View services</ion-button
+        >
       </div>
     </section>
 
@@ -16,11 +30,17 @@
       <div class="bridge-grid">
         <div class="bridge-card">
           <h3>UK-Based Professional Standards</h3>
-          <p>We operate under UK professional norms, providing a secure, local point of contact for your international interests.</p>
+          <p>
+            A UK point of contact and structured advisory process designed for
+            international clients who prioritise accountability.
+          </p>
         </div>
         <div class="bridge-card">
-          <h3>Deep Ugandan Roots</h3>
-          <p>Direct access to a vetted network of professionals in Kampala to verify what brochures won't tell you.</p>
+          <h3>Grounded Local Context</h3>
+          <p>
+            On-the-ground insights and checks through vetted partners—so
+            decisions aren't based on brochures alone.
+          </p>
         </div>
       </div>
     </section>
@@ -30,18 +50,31 @@
       <div class="pathways-grid">
         <!-- Featured: Invest & Work -->
         <div class="service-card featured-card">
-          <ion-card class="card ph-pathway-card ph-pathway-primary is-primary featured"
-                    role="link"
-                    tabindex="0"
-                    (click)="goTo('/invest-work')"
-                    (keydown)="onCardKeydown($event, '/invest-work')">
+          <ion-card
+            class="card ph-pathway-card ph-pathway-primary is-primary featured"
+            role="link"
+            tabindex="0"
+            (click)="goTo('/invest-work')"
+            (keydown)="onCardKeydown($event, '/invest-work')"
+          >
             <ion-card-header>
               <span class="pathway-descriptor">For investors & operators</span>
               <ion-card-title>Capital & Operations</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <p>Entry advisory for institutional investors and entrepreneurs. We verify the landscape so your venture starts on solid ground.</p>
-              <ion-button routerLink="/invest-work" routerDirection="root" fill="outline" color="primary" class="pathway-cta" (click)="$event.stopPropagation()">
+              <p>
+                Entry advisory for investors and entrepreneurs. We help you
+                assess pathways, risks, and requirements before committing
+                capital or people.
+              </p>
+              <ion-button
+                routerLink="/invest-work"
+                routerDirection="root"
+                fill="outline"
+                color="primary"
+                class="pathway-cta"
+                (click)="$event.stopPropagation()"
+              >
                 <span class="card-cta">
                   <span class="card-cta-text">Explore advisory</span>
                   <span class="card-cta-arrow">→</span>
@@ -53,18 +86,31 @@
 
         <!-- Study -->
         <div class="service-card">
-          <ion-card class="card ph-pathway-card"
-                    role="link"
-                    tabindex="0"
-                    (click)="goTo('/study')"
-                    (keydown)="onCardKeydown($event, '/study')">
+          <ion-card
+            class="card ph-pathway-card"
+            role="link"
+            tabindex="0"
+            (click)="goTo('/study')"
+            (keydown)="onCardKeydown($event, '/study')"
+          >
             <ion-card-header>
               <span class="pathway-descriptor">For families</span>
               <ion-card-title>Safeguarding & Governance</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <p>Bespoke advisory for families. We review institutional standards and safeguarding to support informed decisions.</p>
-              <ion-button routerLink="/study" routerDirection="root" fill="outline" color="primary" class="pathway-cta" (click)="$event.stopPropagation()">
+              <p>
+                Education pathway advisory for families and sponsors. We help
+                you assess institutional standards and safeguarding
+                considerations.
+              </p>
+              <ion-button
+                routerLink="/study"
+                routerDirection="root"
+                fill="outline"
+                color="primary"
+                class="pathway-cta"
+                (click)="$event.stopPropagation()"
+              >
                 <span class="card-cta">
                   <span class="card-cta-text">View education pathway</span>
                   <span class="card-cta-arrow">→</span>
@@ -76,18 +122,30 @@
 
         <!-- Visit -->
         <div class="service-card">
-          <ion-card class="card ph-pathway-card"
-                    role="link"
-                    tabindex="0"
-                    (click)="goTo('/visit')"
-                    (keydown)="onCardKeydown($event, '/visit')">
+          <ion-card
+            class="card ph-pathway-card"
+            role="link"
+            tabindex="0"
+            (click)="goTo('/visit')"
+            (keydown)="onCardKeydown($event, '/visit')"
+          >
             <ion-card-header>
               <span class="pathway-descriptor">For retirees & explorers</span>
               <ion-card-title>Curated Strategic Briefing</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <p>Not a tour—an on-the-ground evaluation for those exploring residency, retirement, or a future base in Uganda.</p>
-              <ion-button routerLink="/visit" routerDirection="root" fill="outline" color="primary" class="pathway-cta" (click)="$event.stopPropagation()">
+              <p>
+                Not a tour—an on-the-ground evaluation for those exploring
+                residency, retirement, or a future base in Uganda.
+              </p>
+              <ion-button
+                routerLink="/visit"
+                routerDirection="root"
+                fill="outline"
+                color="primary"
+                class="pathway-cta"
+                (click)="$event.stopPropagation()"
+              >
                 <span class="card-cta">
                   <span class="card-cta-text">Explore visit pathways</span>
                   <span class="card-cta-arrow">→</span>
@@ -106,22 +164,27 @@
         <div class="process-step">
           <div class="step-number">1</div>
           <h3>Intake</h3>
-          <p>Define your scope and risk profile.</p>
+          <p>Define scope, constraints, and risk profile.</p>
         </div>
         <div class="process-step">
           <div class="step-number">2</div>
-          <h3>Verification</h3>
-          <p>London + Kampala teams audit the opportunity.</p>
+          <h3>Checks (where appropriate)</h3>
+          <p>UK-led review supported by on-the-ground checks.</p>
         </div>
         <div class="process-step">
           <div class="step-number">3</div>
           <h3>Clarity Report</h3>
-          <p>Written briefing on risks and requirements.</p>
+          <p>
+            Written briefing on risks, requirements, and recommended next steps.
+          </p>
         </div>
         <div class="process-step">
           <div class="step-number">4</div>
           <h3>Coordination</h3>
-          <p>Audit-ready administrative support where appropriate.</p>
+          <p>
+            Administrative coordination support where appropriate (audit-ready
+            outputs).
+          </p>
         </div>
       </div>
     </section>
@@ -133,19 +196,28 @@
         <li>Advisory-led, not operational</li>
         <li>Fixed-scope, paid engagements</li>
         <li>Clear boundaries and written outputs</li>
-        <li>UK-based accountability with grounded local context</li>
       </ul>
     </section>
 
     <!-- Disclaimer -->
     <section class="section notice">
-      <p class="muted">We provide independent advisory and administrative coordination only. We do not provide legal, immigration, or investment advice and do not guarantee outcomes.</p>
+      <p class="muted">
+        We provide independent advisory and administrative coordination only. We
+        do not provide legal, immigration, or investment advice and do not
+        guarantee outcomes.
+      </p>
     </section>
 
     <!-- Page End CTA -->
     <section class="section ctaStrip">
       <p>Start with an Advisory Intake</p>
-      <ion-button routerLink="/intake" routerDirection="root" fill="solid" color="secondary">Request Intake</ion-button>
+      <ion-button
+        routerLink="/intake"
+        routerDirection="root"
+        fill="solid"
+        color="secondary"
+        >Request Intake</ion-button
+      >
     </section>
   </div>
 </ion-content>

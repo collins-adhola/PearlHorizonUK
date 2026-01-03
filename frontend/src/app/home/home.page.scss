@@ -1,7 +1,7 @@
 // Home page container - wider with reduced padding
 :host {
   .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -29,9 +29,9 @@
   text-align: center;
   background-color: rgba(241, 245, 244, 0.6);
   border: 1px solid rgba(36, 50, 61, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: var(--space-16) 32px;
-  margin: 0 auto var(--space-16);
+  margin: 0 auto var(--space-20);
   max-width: 1000px;
 
   @media (max-width: 1024px) {
@@ -118,7 +118,7 @@
 
 // Bridge Section: Unfair Advantage
 .bridge-section {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
 }
 
 .bridge-grid {
@@ -133,11 +133,20 @@
 }
 
 .bridge-card {
-  background: rgba(47, 164, 169, 0.04);
-  border: 1px solid rgba(47, 164, 169, 0.15);
-  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(36, 50, 61, 0.08);
+  border-radius: 16px;
   padding: 28px 32px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      border-color: rgba(47, 164, 169, 0.2);
+    }
+  }
 
   @media (max-width: 768px) {
     padding: 24px;
@@ -162,12 +171,12 @@
 // Pathways Section
 #pathways {
   scroll-margin-top: 80px;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
 }
 
 .pathways-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   align-items: stretch;
 
@@ -186,10 +195,10 @@
     height: 100%;
 
     &.featured-card {
-      grid-column: 1 / 2;
+      grid-column: span 2;
 
       @media (max-width: 1024px) {
-        grid-column: 1;
+        grid-column: span 1;
       }
     }
 
@@ -200,8 +209,8 @@
       margin: 0;
       position: relative;
       background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      border-radius: 12px;
+      border: 1px solid rgba(36, 50, 61, 0.08);
+      border-radius: 16px;
       overflow: hidden;
       cursor: pointer;
 
@@ -256,6 +265,7 @@
         &:hover {
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+          border-color: rgba(47, 164, 169, 0.2);
 
           // Animate CTA arrow when card is hovered
           ion-button.pathway-cta .card-cta-arrow {
@@ -386,8 +396,8 @@
 
 // The Advisory Process
 .advisory-process {
-  margin-bottom: var(--space-12);
-  padding-top: var(--space-8);
+  margin-bottom: var(--space-16);
+  padding-top: var(--space-12);
   border-top: 1px solid rgba(36, 50, 61, 0.08);
 
   .section-title {
@@ -420,8 +430,21 @@
   }
 
   .process-step {
+    background: #ffffff;
+    border: 1px solid rgba(36, 50, 61, 0.08);
+    border-radius: 16px;
     text-align: center;
     padding: 24px 20px;
+    box-shadow: 0 2px 8px rgba(36, 50, 61, 0.04);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        border-color: rgba(47, 164, 169, 0.2);
+      }
+    }
 
     .step-number {
       width: 48px;
@@ -456,8 +479,8 @@
 
 // How We Work Section
 .how-we-work {
-  margin-top: var(--space-12);
-  padding-top: var(--space-8);
+  margin-top: var(--space-16);
+  padding-top: var(--space-12);
   border-top: 1px solid rgba(36, 50, 61, 0.08);
 
   .pageTitle {
